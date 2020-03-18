@@ -1,0 +1,13 @@
+
+[empleado]-<>[persona]
+[cliente]-<>[persona]
+[cliente]<>-[compra]
+
+
+[cliente]<>-[compra]
+[empleado]<>-[venta]
+[venta]<>-[productos]
+[compra]<>-[productos]
+[productos]-<>[pastillas]
+[productos]-<>[consumibles]
+[productos]-<>[jarabes]
