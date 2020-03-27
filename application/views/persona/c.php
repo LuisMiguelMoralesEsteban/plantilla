@@ -33,5 +33,5 @@
 	
 	<input type="submit"/>
 </form>
-
+<a href="<?= base_url()?>persona/r"><button>volver</button></a>
 </div>

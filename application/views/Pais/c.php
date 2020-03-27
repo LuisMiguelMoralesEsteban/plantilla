@@ -13,5 +13,5 @@
 	
 	<input type="submit"/>
 </form>
-
+<a href="<?= base_url()?>pais/r"><button>volver</button></a>
 </div>
