@@ -16,6 +16,8 @@ class Persona_model extends CI_Model
         $persona->nombre = "admin";
         $persona->password = password_hash("admin", PASSWORD_DEFAULT);
         R::store($persona);
+       
+       
     }
 
     public function crearPersona($loginname, $nombre, $password, $altura, $fnac, $foto, $idnace)
