@@ -21,11 +21,13 @@ class Persona extends CI_Controller
         $password = isset($_POST['pwd']) ? $_POST['pwd'] : null;
         $altura = isset($_POST['altura']) ? $_POST['altura'] : null;
         $fnac = isset($_POST['fnac']) ? $_POST['fnac'] : null;
-        $foto = isset($_POST['foto']) ? $_POST['foto'] : null;
-        $idnace = isset($_POST['idnace']) ? $_POST['idnace'] : null;
         
+        $idnace = isset($_POST['idnace']) ? $_POST['idnace'] : null;
+       
         try {
-            $this->persona_model->crearPersona($loginname,$nombre,$password,$altura,$fnac,$foto,$idnace);
+            $this->cargar_archivo($nombre);
+            $this->persona_model->crearPersona($loginname,$nombre,$password,$altura,$fnac,$idnace);
+           
             redirect(base_url() . 'persona/r');
         }
         catch (Exception $e) {
@@ -34,6 +36,27 @@ class Persona extends CI_Controller
             $_SESSION['_msg']['uri']='persona/c';
             redirect(base_url() . 'msg');
         }
+    }
+    function cargar_archivo($nombre ) {
+       
+        
+        $mi_archivo = 'foto';
+        $config['upload_path'] = "C:\worpresphp\LuismiguelCI\assets\img";
+        $config['file_name'] ="persona-".$nombre.".png";
+        $config['allowed_types'] = "*";
+        $config['max_size'] = "50000";
+        $config['max_width'] = "2000";
+        $config['max_height'] = "2000";
+        
+        $this->load->library('upload', $config);
+        
+        if (!$this->upload->do_upload($mi_archivo)) {
+           
+           
+            return;
+        }
+        
+       
     }
 
     public function r()

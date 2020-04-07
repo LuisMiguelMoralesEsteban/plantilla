@@ -7,7 +7,7 @@
 	<a href="<?=base_url()?>hdu/user/logout">Logout</a>
 	
 <?php else:?>
-<a href="<?=base_url()?>init">Registrar</a>
+<a href="<?=base_url()?>persona/c">Registrar</a>
 <a href="<?=base_url()?>hdu/anonymous/login">Login</a>
 
 
