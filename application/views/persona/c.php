@@ -18,13 +18,13 @@
 	<input id="id-pwd" type="number" name="altura" min="1" max="400"/>
 	<br/>
    <label for="idp-f">fnac</label>
-	<input id="idp-f" value="0/0/0" type="date" name="fnac"/>
+	<input id="idp-f" value="1901-01-01" type="date" name="fnac"/>
 	<br/>
 	 <label for="idp-fo">foto</label>
 	<input id="idp-fo"   type="file"  name="foto"/>
 	 nace
      <select name="idnace">
-      
+    <option  value="NULL">---</option>
        <?php foreach ($paises as $pais):?>
 		<option  value="<?=$pais->id?>"><?=$pais->nombre?></option>
 		<?php endforeach;?>

@@ -12,13 +12,12 @@ class Persona_model extends CI_Model
     public function crearadmin()
     {
         $persona = R::dispense('persona');
-        $pais = R::dispense('pais');
+   
         $persona->loginname = "admin";
         $persona->nombre = "admin";
         $persona->password = password_hash("admin", PASSWORD_DEFAULT);
         R::store($persona);
-        $pais->nombre = "---";
-        R::store($pais);
+      
        
     }
 
@@ -41,13 +40,13 @@ class Persona_model extends CI_Model
             $persona->altura = $altura;
             $persona->fnac = $fnac;
             
-            $directorio = "C:\worpresphp\LuismiguelCI\assets\img\persona-".$nombre.".png";
+            $directorio = "C:\worpresphp\LuismiguelCI\assets\upload\persona-".$nombre.".png";
             
             $existefichero = is_file( $directorio );
             if ( $existefichero==true ) {
-                $ruta="\assets\img\persona-".$nombre.".png";
+                $ruta="\assets\upload\persona-".$nombre.".png";
             } else {
-                $ruta="\assets\img\persona-default.png";
+                $ruta="\assets\upload\persona-default.png";
             }
             
             
@@ -56,12 +55,16 @@ class Persona_model extends CI_Model
            
             
             
+            if( $idnace!=0){
+                $persona->nace = $nace;
+            }
+            else{}
           
-            $persona->nace = $nace;
+            
             
             R::store($persona);
         } else {
-            $e = ($loginname == null ? new Exception("no se permite campo loginname vacio") : new Exception("datos introducidos duplicados"));
+            $e = ($loginname == null ? new Exception("no se permite campo loginname vacio") : new Exception(" los datos introducidos estan duplicados"));
             throw $e;
         }
     }

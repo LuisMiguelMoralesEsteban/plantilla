@@ -28,7 +28,11 @@ class Persona extends CI_Controller
             $this->cargar_archivo($nombre);
             $this->persona_model->crearPersona($loginname,$nombre,$password,$altura,$fnac,$idnace);
            
-            redirect(base_url() . 'persona/r');
+            session_start();
+           
+            session_start();
+            $_SESSION['_msg']['texto']="usuario creado correctamnete";
+            redirect(base_url() . 'msg');
         }
         catch (Exception $e) {
             session_start();
@@ -41,7 +45,7 @@ class Persona extends CI_Controller
        
         
         $mi_archivo = 'foto';
-        $config['upload_path'] = "C:\worpresphp\LuismiguelCI\assets\img";
+        $config['upload_path'] = "C:\worpresphp\LuismiguelCI\assets\upload";
         $config['file_name'] ="persona-".$nombre.".png";
         $config['allowed_types'] = "*";
         $config['max_size'] = "50000";
