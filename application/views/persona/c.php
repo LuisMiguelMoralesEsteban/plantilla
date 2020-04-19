@@ -15,7 +15,7 @@
 	<input id="id-pwd" type="password" name="pwd"/>
 	<br/>
  	<label for="id-pwd">altura</label>
-	<input id="id-pwd" type="number" name="altura" min="1" max="400"/>
+	<input id="id-pwd" type="number"  value ="100" name="altura" min="1" max="400"/>
 	<br/>
    <label for="idp-f">fnac</label>
 	<input id="idp-f" value="1901-01-01" type="date" name="fnac"/>

@@ -45,7 +45,9 @@ class Persona extends CI_Controller
        
         
         $mi_archivo = 'foto';
+       
         $config['upload_path'] = "C:\worpresphp\LuismiguelCI\assets\upload";
+      
         $config['file_name'] ="persona-".$nombre.".png";
         $config['allowed_types'] = "*";
         $config['max_size'] = "50000";

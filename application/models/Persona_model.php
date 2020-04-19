@@ -40,7 +40,7 @@ class Persona_model extends CI_Model
             $persona->altura = $altura;
             $persona->fnac = $fnac;
             
-            $directorio = "C:\worpresphp\LuismiguelCI\assets\upload\persona-".$nombre.".png";
+           /* $directorio = "C:\worpresphp\LuismiguelCI\assets\upload\persona-".$nombre.".png";
             
             $existefichero = is_file( $directorio );
             if ( $existefichero==true ) {
@@ -51,7 +51,7 @@ class Persona_model extends CI_Model
             
             
             
-            $persona->foto = $ruta;
+            $persona->foto = $ruta;*/
            
             
             
