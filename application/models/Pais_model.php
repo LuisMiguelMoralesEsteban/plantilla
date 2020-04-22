@@ -2,11 +2,15 @@
 
 class Pais_model extends CI_Model
 {
-   
- 
-    public function getPais()
+    
+    public function getPaisById($id)
     {
-        return R::findAll('pais');
+        return R::load('pais', $id);
+    }
+    public function getPais()
+    {   
+        
+        return R::findAll('pais',' order by nombre asc ');
     }
  
 
@@ -24,16 +28,38 @@ class Pais_model extends CI_Model
             R::store($pais);
 
         } else {
-            $e = ($nombre == null ? new Exception("nulo") : new Exception("duplicado"));
+            $e = ($nombre == null ? new Exception("el campo no puede estar vacio") : new Exception("el pais introducido esta duplicado"));
             throw $e;
         }}
     
        
-
+        public function borrarpais($id){
+            
+            R::trash(R::load('pais',$id));
+            
+        }
         
     
-
+        public  function actualizarPais( $id ,$nombre , $nombrenuevo){
+          
+           
+            $ok = ($nombrenuevo!=null && $nombrenuevo!=$nombre );
+            if ($ok) {
+                
+                $pais = R::load('pais', $id);
+                
+                
+                
+                $pais->nombre = $nombrenuevo;
+                
+                R::store($pais);
+                
+            } else {
+                $e = ($nombrenuevo == null ? new Exception("el campo no puede estar vacio") : new Exception("el pais introducido esta duplicado"));
+                throw $e;
+            
+        }
   
-}
+}}
 
 ?>

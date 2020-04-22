@@ -17,7 +17,9 @@
 		<th>altura</th>
 		<th>fnac</th>
 		<th>foto</th>
-		<th>Acción</th>
+		<th>cantidad</th>
+		<th>borrar</th>
+		<th>actualizar</th>
 	</tr>
 	
 	

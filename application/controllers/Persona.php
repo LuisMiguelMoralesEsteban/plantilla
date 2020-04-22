@@ -69,9 +69,11 @@ class Persona extends CI_Controller
     {
         $this->load->model('persona_model');
         $this->load->model('pais_model');
-        $datos['personas'] = $this->persona_model->getPersonas();
+     
       
-        frame($this,'persona/r', $datos);
+        frame($this,'persona/r');
     }
+    
+   
 }
 ?>
