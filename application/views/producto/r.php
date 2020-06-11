@@ -14,6 +14,7 @@
 	
 		<th>nombre</th>
 		<th>categoria</th>
+			<th>foto</th>
 		<th>accion</th>
 		
 	</tr>
@@ -27,7 +28,19 @@
 				<td><?=
 				$producto ->categoria->nombre
 			?></td>
-				
+				<?php if ($producto ->foto!=null):?>
+				<td>
+				<img src="<?=base_url()?>assets\upload\producto-<?=
+				$producto -> nombre;?>.<?=
+			$producto -> foto;?>"  width="80" height="80">
+			</td>
+			<?php  else:?>
+			
+			<td>
+		<img src="<?=base_url()?>assets\upload\noimagen.jpg"
+					  width="80" height="80">
+					  </td>
+			<?php endif;?>
 	
 			<td><form action="<?=base_url()?>producto/u" method="post">
 				<input type="hidden" name="id" value="<?=$producto->id?>">

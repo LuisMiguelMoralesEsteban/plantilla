@@ -49,16 +49,14 @@
 	<br/>
 	
 	<label for="id-pwd">stock</label>
-	<input id="id-pwd" type="number" name="stock"/>
+	<input id="id-pwd" type="number"  value="0" name="stock"/>
 	<br/>
  	<label for="id-pwd">precio</label>
 	<input id="id-pwd" type="number"   name="precio" />
 	<br/>
-   <label for="idp-f">fnac</label>
-	<input id="idp-f" value="1901-01-01" type="date" name="fnac"/>
-	<br/>
+  
 	 <label for="idp-fo">foto</label>
-	<input id="idp-fo"   type="file"  name="foto"/>
+	<input id="idp-fo"   type="file"  name="foto" accept="image/x-png,image/gif,image/jpeg" />
 	 categoria
      <select name="categoria">
     <option  value="NULL">---</option>

@@ -75,21 +75,10 @@ class Persona_model extends CI_Model
                 }}
                 
                 
-              
+                  
                 
                 
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                $persona->foto = $extension;
+               
                 
                 
                 
@@ -100,8 +89,7 @@ class Persona_model extends CI_Model
                }
                
                
-               $persona->nogusta=gusta;
-               $persona->nogusta=nogusta;
+               
                 
                 
                 

@@ -56,11 +56,11 @@
 	<input id="idp-f" value="1901-01-01" type="date" name="fnac"/>
 	<br/>
 	 <label for="idp-fo">foto</label>
-	<input id="idp-fo"   type="file"  name="foto"/>
+	<input id="idp-fo"   type="file"  name="foto" accept="image/x-png,image/gif,image/jpeg" />
 	
 	 nace
      <select name="idnace">
-    <option  value="NULL">---</option>
+  
        <?php foreach ($paises as $pais):?>
 		<option  value="<?=$pais->id?>"><?=$pais->nombre?></option>
 		<?php endforeach;?>
